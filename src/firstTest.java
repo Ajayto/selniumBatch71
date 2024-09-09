@@ -10,7 +10,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import util.Helper;
 
@@ -23,25 +25,99 @@ public class firstTest {
 		browser.launchBrowser(prop.getProperty("RunOnBrowser"));
 	   
 		UIoprator.driver.manage().window().maximize();
-		UIoprator.driver .manage().timeouts().implicitlyWait(Duration.ofSeconds(60));
+		
+		UIoprator.driver.findElement(By.id("timerAlertButton")).click();
+		
+		//accept alert
+		WebDriverWait wait= new WebDriverWait(UIoprator.driver, Duration.ofSeconds(20));
+		wait.until(ExpectedConditions.alertIsPresent());
+		UIoprator.driver.switchTo().alert().accept();
 		
 		
-		JavascriptExecutor js=(JavascriptExecutor)UIoprator.driver;
-		js.executeScript("window.scrollBy(100,600)");
 		
-		String Color="Red";
 		
-		UIoprator.driver.findElement(By.xpath("//div[text()='Select...']")).click();
-		UIoprator.driver.findElement(By.xpath("//div[text()='Blue']")).click();
-		UIoprator.driver.findElement(By.xpath("//div[text()='Black']")).click();
-		UIoprator.driver.findElement(By.xpath("//div[text()='"+Color+"']")).click();
 		
-		Thread.sleep(5000);
 		
-		UIoprator.driver.findElement(By.xpath("//div[text()='Black']/following-sibling::div")).click();
-		Thread.sleep(5000);
-		UIoprator.driver.findElement(By.xpath("//b[text()='Multiselect drop down']/parent::p/following-sibling::div/div/div[2]/div[1]")).click();
 		
+		
+		
+		//UIoprator.driver.navigate().to(UIoprator.driver.getCurrentUrl());
+		
+		
+		//UIoprator.driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+		
+		
+//		
+//		UIoprator.driver.findElement(By.id("reveal")).click();
+//		WebDriverWait wait= new WebDriverWait(UIoprator.driver, Duration.ofSeconds(50));
+//		
+//		wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.id("revealed")));// element is in dom or not
+//		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("revealed"))); // 2 sec
+//		//wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("revealed")));
+//		
+//		
+//		UIoprator.driver.findElement(By.id("revealed")).sendKeys("abcd");
+		
+		
+		
+		
+		
+		
+		//
+		
+		
+		
+//		 UIoprator.driver.findElement(By.id("adder")).click();
+//		 System.out.println(UIoprator.driver.findElement(By.id("box0")).isDisplayed());
+//		 UIoprator.driver.findElement(By.id("adder")).click();
+//		 System.out.println(UIoprator.driver.findElement(By.id("box1")).isDisplayed());
+//		 UIoprator.driver.findElement(By.id("adder")).click();
+//		 System.out.println(UIoprator.driver.findElement(By.id("box2")).isDisplayed());
+		 
+		 
+		 //
+		 //  System.out.println(UIoprator.driver.findElement(By.cssSelector("#revealed")).isDisplayed());
+		
+//	   UIoprator.driver.findElement(By.id("adder")).click();
+//	   System.out.println(UIoprator.driver.findElement(By.id("box0")).isDisplayed());
+//	   
+//	   UIoprator.driver.findElement(By.id("adder")).click();
+//	   System.out.println(UIoprator.driver.findElement(By.id("box1")).isDisplayed());
+//	   
+//	   UIoprator.driver.findElement(By.id("adder")).click();
+//	   System.out.println(UIoprator.driver.findElement(By.id("box2")).isDisplayed());
+	   
+	  
+	   
+		
+		//UIoprator.driver.findElement(By.xpath("//span[text()='FLIGHTS']")).click();
+		
+		
+		//System.out.println(UIoprator.driver.findElement(By.cssSelector(".emt_logo")).isDisplayed());
+		
+		
+		
+		
+
+		//UIoprator.driver .manage().timeouts().implicitlyWait(Duration.ofSeconds(60));
+		
+		
+//		JavascriptExecutor js=(JavascriptExecutor)UIoprator.driver;
+//		js.executeScript("window.scrollBy(100,600)");
+//		
+//		String Color="Red";
+//		
+//		UIoprator.driver.findElement(By.xpath("//div[text()='Select...']")).click();
+//		UIoprator.driver.findElement(By.xpath("//div[text()='Blue']")).click();
+//		UIoprator.driver.findElement(By.xpath("//div[text()='Black']")).click();
+//		UIoprator.driver.findElement(By.xpath("//div[text()='"+Color+"']")).click();
+//		
+//		Thread.sleep(5000);
+//		
+//		UIoprator.driver.findElement(By.xpath("//div[text()='Black']/following-sibling::div")).click();
+//		Thread.sleep(5000);
+//		UIoprator.driver.findElement(By.xpath("//b[text()='Multiselect drop down']/parent::p/following-sibling::div/div/div[2]/div[1]")).click();
+//		
 		
 		
 		
